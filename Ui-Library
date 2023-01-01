@@ -264,6 +264,19 @@ function Kavo.CreateLib(kavName, themeList)
     Ping.TextSize = 14.000
     Ping.TextWrapped = true
 
+                local script = Instance.new('LocalScript', Fps)
+                local RunService = game:GetService("RunService")
+                RunService.RenderStepped:Connect(function(frame) -- This will fire every time a frame is rendered
+                script.Parent.Text = ("FPS: "..math.round(1/frame)) 
+                end)
+
+
+                local script = Instance.new('LocalScript', Ping)
+                local RunService = game:GetService("RunService")
+                RunService.RenderStepped:Connect(function(ping) 
+                script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
+                end)
+
     MainCorner.CornerRadius = UDim.new(0, 4)
     MainCorner.Name = "MainCorner"
     MainCorner.Parent = Main
@@ -2441,19 +2454,6 @@ function Kavo.CreateLib(kavName, themeList)
                 togName_2.TextSize = 14.000
                 togName_2.TextXAlignment = Enum.TextXAlignment.Left
                 
-                local script = Instance.new('LocalScript', Fps)
-                local RunService = game:GetService("RunService")
-                RunService.RenderStepped:Connect(function(frame) -- This will fire every time a frame is rendered
-                script.Parent.Text = ("FPS: "..math.round(1/frame)) 
-                end)
-
-
-                local script = Instance.new('LocalScript', Ping)
-                local RunService = game:GetService("RunService")
-                RunService.RenderStepped:Connect(function(ping) 
-                script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
-                end)
-
                 if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
                     Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
                 end 
