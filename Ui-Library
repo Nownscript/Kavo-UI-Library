@@ -240,10 +240,10 @@ function Kavo.CreateLib(kavName, themeList)
     Main.Size = UDim2.new(0, 525, 0, 318)
     
     Fps.Name = "Fps"
-    Fps.Parent = Main
+    Fps.Parent = ScreenGui
     Fps.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Fps.BackgroundTransparency = 1.000
-    Fps.Position = UDim2.new(0.7171428565, 0, 0.344827592, 0)
+    Fps.Position = UDim2.new(0.786138654, 0, 0, 0)
     Fps.Size = UDim2.new(0, 125, 0, 25)
     Fps.Font = Enum.Font.SourceSans
     Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -252,30 +252,17 @@ function Kavo.CreateLib(kavName, themeList)
     Fps.TextWrapped = true
 
     Ping.Name = "Ping"
-    Ping.Parent = Main
+    Ping.Parent = ScreenGui
     Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Ping.BackgroundTransparency = 1.000
     Ping.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    Ping.Position = UDim2.new(0.5171428565, 0, 0.344827592, 0)
+    Ping.Position = UDim2.new(0.700000048, 0, 0, 0)
     Ping.Size = UDim2.new(0, 125, 0, 25)
     Ping.Font = Enum.Font.SourceSans
     Ping.TextColor3 = Color3.fromRGB(253, 253, 253)
     Ping.TextScaled = true
     Ping.TextSize = 14.000
     Ping.TextWrapped = true
-
-                local script = Instance.new('LocalScript', Fps)
-                local RunService = game:GetService("RunService")
-                RunService.RenderStepped:Connect(function(frame) -- This will fire every time a frame is rendered
-                script.Parent.Text = ("FPS: "..math.round(1/frame)) 
-                end)
-
-
-                local script = Instance.new('LocalScript', Ping)
-                local RunService = game:GetService("RunService")
-                RunService.RenderStepped:Connect(function(ping) 
-                script.Parent.Text = ("Ping: " ..game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(math.round(2/ping))) -- your ping
-                end)
 
     MainCorner.CornerRadius = UDim.new(0, 4)
     MainCorner.Name = "MainCorner"
@@ -2453,7 +2440,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName_2.TextColor3 = themeList.TextColor
                 togName_2.TextSize = 14.000
                 togName_2.TextXAlignment = Enum.TextXAlignment.Left
-                
+
                 if themeList.SchemeColor == Color3.fromRGB(255,255,255) then
                     Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(0,0,0)}, 0.2)
                 end 
