@@ -243,7 +243,7 @@ function Kavo.CreateLib(kavName, themeList)
     Fps.Parent = ScreenGui
     Fps.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Fps.BackgroundTransparency = 1.000
-    Fps.Position = UDim2.new(0.786138654, 0, 0, 0)
+    Fps.Position = UDim2.new(1.532815105, 0, 0.344827592, 0)
     Fps.Size = UDim2.new(0, 125, 0, 25)
     Fps.Font = Enum.Font.SourceSans
     Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -256,7 +256,7 @@ function Kavo.CreateLib(kavName, themeList)
     Ping.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Ping.BackgroundTransparency = 1.000
     Ping.BorderColor3 = Color3.fromRGB(255, 255, 255)
-    Ping.Position = UDim2.new(0.700000048, 0, 0, 0)
+    Ping.Position = UDim2.new(0.5171428565, 0, 0.344827592, 0)
     Ping.Size = UDim2.new(0, 125, 0, 25)
     Ping.Font = Enum.Font.SourceSans
     Ping.TextColor3 = Color3.fromRGB(253, 253, 253)
